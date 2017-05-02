@@ -1,0 +1,72 @@
+.inform__container {
+  width: 100%;
+  height: 0;
+  position: fixed;
+  bottom: 0;
+  z-index: 77;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  transition: 0.25s ease all; }
+
+.inform__notification {
+  backface-visibility: hidden;
+  transform: translate(0, 0);
+  transition: all ease 0.5s;
+  margin-top: -58px;
+  height: 48px;
+  font-size: 13px;
+  background-color: #323232;
+  color: #FFF;
+  border-radius: 2px;
+  line-height: 24px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  cursor: default; }
+  .inform__notification.transition {
+    transform: translate(0, 60px);
+    pointer-events: none; }
+
+.inform__notification--warn {
+  background-color: #906608; }
+
+.inform__notification--error {
+  background-color: #B00; }
+
+.inform__textContent {
+  display: inline-block;
+  padding: 12px 24px; }
+
+.inform__button {
+  border: none;
+  background-color: transparent;
+  margin-left: 36px;
+  color: #3F3;
+  position: relative;
+  z-index: 0;
+  border-radius: 2px;
+  overflow: hidden;
+  height: 40px;
+  padding: 0 12px;
+  margin: 4px;
+  text-transform: uppercase; }
+  .inform__button::after {
+    content: " ";
+    background-color: #434343;
+    display: block;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 300%;
+    padding-bottom: 300%;
+    border-radius: 50%;
+    transition: all 1s;
+    opacity: 0;
+    z-index: -1; }
+  .inform__button:active::after {
+    transition: 0s;
+    opacity: 1;
+    transform: translate(-50%, -50%);
+    width: 0%;
+    padding-bottom: 0%; }
