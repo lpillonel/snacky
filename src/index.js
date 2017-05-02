@@ -1,6 +1,6 @@
 import { tick, Timer, uniqueId } from './util'
 
-import './snacky.scss'
+import './index.scss'
 
 /**
  * Notification type

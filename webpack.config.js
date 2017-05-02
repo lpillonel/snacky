@@ -2,14 +2,16 @@ const ExtractTextPlugin = require("extract-text-webpack-plugin")
 const webpack = require("webpack")
 
 const extractSass = new ExtractTextPlugin({
-    filename: "snacky.css",
+    filename: "index.css",
 })
 
 module.exports = {
   entry: __dirname + "/src/index.js",
   output: {
-    path: __dirname + "/dist",
-    filename: "snacky.js",
+    path: __dirname + "/build",
+    filename: "index.js",
+    library: 'snacky',
+    libraryTarget: 'commonjs2',
   },
   module: {
     rules: [

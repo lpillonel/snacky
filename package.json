@@ -1,12 +1,12 @@
 {
   "name": "snacky",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Material Design Snackbar in vanilla JS",
-  "main": "dist/snacky.js",
+  "main": "build",
   "author": "Luca Pillonel",
   "license": "MIT",
   "scripts": {
-    "start": "webpack"
+    "build": "webpack"
   },
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
