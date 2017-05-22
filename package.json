@@ -1,6 +1,6 @@
 {
   "name": "snacky",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Material Design Snackbar in vanilla JS",
   "main": "build",
   "author": "Luca Pillonel",

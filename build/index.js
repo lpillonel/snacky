@@ -208,6 +208,8 @@ var TYPE = exports.TYPE = {
  */
 var DEFAULTS = {
     type: TYPE.INFO,
+    title: null,
+    text: null,
     hideDelay: 6000,
     actionText: undefined,
     action: undefined,
@@ -453,13 +455,20 @@ function createNotificationHTMLNode(notification) {
 
     var notificationNode = document.createElement('div');
     notificationNode.classList.add('inform__notification', 'transition', 'inform__notification--' + notification.type.toLowerCase());
+    var innerHTML = '<div class="inform__text">';
+
+    // Do we have a title ?
+    if (notification.title) {
+        innerHTML += '<span class="inform__textTitle">' + notification.title + '</span>';
+        notificationNode.classList.add('inform__notification--with-title');
+    }
 
     // Construct inner html
-    var innerHTML = '<span class="inform__textContent">' + notification.text + '</span>';
+    innerHTML += '<span class="inform__textContent">' + notification.text + '</span></div>';
 
     // Add action
     if (typeof notification.action === 'function') {
-        innerHTML = innerHTML + ('<button class="inform__button">' + (notification.actionText || 'Action') + '</button>');
+        innerHTML += '<button class="inform__button">' + (notification.actionText || 'Action') + '</button>';
     }
 
     notificationNode.innerHTML = innerHTML;

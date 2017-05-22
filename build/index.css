@@ -6,8 +6,7 @@
   z-index: 77;
   display: flex;
   align-content: center;
-  align-items: center;
-  flex-direction: column;
+  justify-content: center;
   transition: 0.25s ease all; }
 
 .inform__notification {
@@ -16,16 +15,23 @@
   transition: all ease 0.5s;
   margin-top: -58px;
   height: 48px;
+  max-width: 100%;
   font-size: 13px;
   background-color: #323232;
   color: #FFF;
   border-radius: 2px;
   line-height: 24px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  cursor: default; }
+  cursor: default;
+  display: flex;
+  align-items: center; }
   .inform__notification.transition {
     transform: translate(0, 60px);
     pointer-events: none; }
+  @media screen and (max-width: 640px) {
+    .inform__notification {
+      margin-top: -48px;
+      border-radius: 0; } }
 
 .inform__notification--warn {
   background-color: #906608; }
@@ -33,9 +39,43 @@
 .inform__notification--error {
   background-color: #B00; }
 
+.inform__notification--with-title {
+  height: 86px;
+  margin-top: -96px; }
+  .inform__notification--with-title.transition {
+    transform: translate(0, 108px); }
+  @media screen and (max-width: 640px) {
+    .inform__notification--with-title {
+      margin-top: -86px; } }
+  .inform__notification--with-title .inform__textContent {
+    padding-top: 8px; }
+  .inform__notification--with-title .inform__button {
+    margin-right: 22px; }
+
+.inform__textTitle {
+  display: block;
+  padding: 12px 24px 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: bold;
+  position: relative; }
+  .inform__textTitle::after {
+    content: ' ';
+    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+    position: absolute;
+    bottom: 0;
+    left: 24px;
+    right: 24px;
+    height: 0; }
+
 .inform__textContent {
-  display: inline-block;
-  padding: 12px 24px; }
+  flex: 1;
+  display: block;
+  padding: 12px 24px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; }
 
 .inform__button {
   border: none;
