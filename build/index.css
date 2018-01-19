@@ -15,7 +15,7 @@
   transition: all ease 0.5s;
   margin-top: -58px;
   height: 48px;
-  max-width: 100%;
+  max-width: 90%;
   font-size: 13px;
   background-color: #323232;
   color: #FFF;
@@ -32,6 +32,9 @@
     .inform__notification {
       margin-top: -48px;
       border-radius: 0; } }
+
+.inform__text {
+  overflow: hidden; }
 
 .inform__notification--warn {
   background-color: #906608; }

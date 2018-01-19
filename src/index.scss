@@ -19,7 +19,7 @@ $break-size: 640px;
         transition: all ease 0.5s;
         margin-top: -58px;
         height: 48px;
-        max-width: 100%;
+        max-width: 90%;
         font-size: 13px;
         background-color: #323232;
         color: #FFF;
@@ -29,47 +29,51 @@ $break-size: 640px;
         cursor: default;
         display: flex;
         align-items: center;
-        
+
         &.transition {
             transform: translate(0, 60px);
             pointer-events: none;
         }
-        
+
         @media screen and (max-width: $break-size) {
             margin-top: -48px;
             border-radius: 0;
         }
     }
-    
+
+    .inform__text {
+      overflow: hidden;
+    }
+
     .inform__notification--warn {
         background-color: #906608;
     }
-    
+
     .inform__notification--error {
         background-color: #B00;
     }
-    
+
     .inform__notification--with-title {
         height: 86px;
         margin-top: -96px;
-        
+
         &.transition {
             transform: translate(0, 108px);
         }
-        
+
         @media screen and (max-width: $break-size) {
             margin-top: -86px;
         }
-        
+
         .inform__textContent {
             padding-top: 8px;
         }
-        
+
         .inform__button {
             margin-right: 22px;
         }
     }
-    
+
         .inform__textTitle {
             display: block;
             padding: 12px 24px 6px;
@@ -78,7 +82,7 @@ $break-size: 640px;
             white-space: nowrap;
             font-weight: bold;
             position: relative;
-            
+
             &::after {
                 content: ' ';
                 border-bottom: 1px solid rgba(#FFF, 0.5);
@@ -89,7 +93,7 @@ $break-size: 640px;
                 height: 0;
             }
         }
-    
+
         .inform__textContent {
             flex: 1;
             display: block;
@@ -98,7 +102,7 @@ $break-size: 640px;
             text-overflow: ellipsis;
             white-space: nowrap;
         }
-    
+
         .inform__button {
             border: none;
             background-color: transparent;
@@ -112,7 +116,7 @@ $break-size: 640px;
             padding: 0 12px;
             margin: 4px;
             text-transform: uppercase;
-            
+
             &::after {
                 content: " ";
                 background-color: #434343;
@@ -128,13 +132,13 @@ $break-size: 640px;
                 opacity: 0;
                 z-index: -1;
             }
-            
+
             &:active::after {
                 transition: 0s;
                 opacity: 1;
                 transform: translate(-50%, -50%);
                 width: 0%;
                 padding-bottom: 0%;
-                
+
             }
         }

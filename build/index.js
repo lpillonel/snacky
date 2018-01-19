@@ -34,9 +34,6 @@ module.exports =
 /******/ 	// expose the module cache
 /******/ 	__webpack_require__.c = installedModules;
 /******/
-/******/ 	// identity function for calling harmony imports with the correct context
-/******/ 	__webpack_require__.i = function(value) { return value; };
-/******/
 /******/ 	// define getter function for harmony exports
 /******/ 	__webpack_require__.d = function(exports, name, getter) {
 /******/ 		if(!__webpack_require__.o(exports, name)) {
@@ -64,113 +61,11 @@ module.exports =
 /******/ 	__webpack_require__.p = "";
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 2);
+/******/ 	return __webpack_require__(__webpack_require__.s = 0);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.tick = tick;
-exports.uniqueId = uniqueId;
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-/**
- * Promise returning function to delay execution
- * @param  {Number} [delay=0] Delay in ms before resolving promise
- * @return {Promise}          Promise chain object
- */
-function tick() {
-  var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
-
-  return new Promise(function (resolve) {
-    return setTimeout(resolve, delay);
-  });
-}
-
-var id = 1;
-
-/**
- * uniqueId
- * @param {String}  prefix  id prefix
- * @return {String} generated uniqueId
- */
-function uniqueId() {
-  var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
-
-  return '' + prefix + id++;
-}
-
-/** Timer class allowing to pause / resume / cancel timeout execution */
-
-var Timer =
-
-/**
- * Constuctor
- * @param  {Function} callback Function to execute after delay
- * @param  {Number}   delay    delay to wait in ms before execution of callback function
- */
-
-
-/**
- * Instance variables
- */
-exports.Timer = function Timer(callback, delay) {
-  var _this = this;
-
-  _classCallCheck(this, Timer);
-
-  this.pause = function () {
-    clearTimeout(_this.timerId);
-    _this.remaining -= new Date() - _this.start;
-  };
-
-  this.resume = function () {
-    _this.start = new Date();
-    clearTimeout(_this.timerId);
-    _this.timerId = setTimeout(_this.callback, _this.remaining);
-  };
-
-  this.clear = function () {
-    clearTimeout(_this.timerId);
-    delete _this.callback;
-  };
-
-  this.remaining = delay;
-  this.callback = callback;
-  this.resume();
-}
-
-/**
- * Pause timer execution
- */
-
-
-/**
- * Resume timer execution
- */
-
-
-/**
- * Clear timeout execution
- */
-;
-
-/***/ }),
-/* 1 */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -187,9 +82,9 @@ exports.warn = warn;
 exports.error = error;
 exports.isNotificationVisible = isNotificationVisible;
 
-var _util = __webpack_require__(0);
+var _util = __webpack_require__(1);
 
-__webpack_require__(1);
+__webpack_require__(2);
 
 /**
  * Notification type
@@ -200,13 +95,12 @@ var TYPE = exports.TYPE = {
     WARN: 'WARN',
     ERROR: 'ERROR',
     SUCCESS: 'SUCCESS'
-};
 
-/**
- * Default settings
- * @type {Object}
- */
-var DEFAULTS = {
+    /**
+     * Default settings
+     * @type {Object}
+     */
+};var DEFAULTS = {
     type: TYPE.INFO,
     title: null,
     text: null,
@@ -217,12 +111,11 @@ var DEFAULTS = {
     replaceId: undefined,
     hideOnClick: true,
     keepOnOver: true
-};
 
-/**
- * Transition duration constant
- */
-var TRANSITION_DURATION = 500;
+    /**
+     * Transition duration constant
+     */
+};var TRANSITION_DURATION = 500;
 
 /**
  * Runtime vars
@@ -502,6 +395,108 @@ document.body.appendChild(container);
  * Export notify as default with assigned with preset
  */
 exports.default = Object.assign(notify, { notify: notify, warn: warn, success: success, error: error, isNotificationVisible: isNotificationVisible });
+
+/***/ }),
+/* 1 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.tick = tick;
+exports.uniqueId = uniqueId;
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+/**
+ * Promise returning function to delay execution
+ * @param  {Number} [delay=0] Delay in ms before resolving promise
+ * @return {Promise}          Promise chain object
+ */
+function tick() {
+  var delay = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 0;
+
+  return new Promise(function (resolve) {
+    return setTimeout(resolve, delay);
+  });
+}
+
+var id = 1;
+
+/**
+ * uniqueId
+ * @param {String}  prefix  id prefix
+ * @return {String} generated uniqueId
+ */
+function uniqueId() {
+  var prefix = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : '';
+
+  return '' + prefix + id++;
+}
+
+/** Timer class allowing to pause / resume / cancel timeout execution */
+
+var Timer =
+
+/**
+ * Constuctor
+ * @param  {Function} callback Function to execute after delay
+ * @param  {Number}   delay    delay to wait in ms before execution of callback function
+ */
+
+
+/**
+ * Instance variables
+ */
+exports.Timer = function Timer(callback, delay) {
+  var _this = this;
+
+  _classCallCheck(this, Timer);
+
+  this.pause = function () {
+    clearTimeout(_this.timerId);
+    _this.remaining -= new Date() - _this.start;
+  };
+
+  this.resume = function () {
+    _this.start = new Date();
+    clearTimeout(_this.timerId);
+    _this.timerId = setTimeout(_this.callback, _this.remaining);
+  };
+
+  this.clear = function () {
+    clearTimeout(_this.timerId);
+    delete _this.callback;
+  };
+
+  this.remaining = delay;
+  this.callback = callback;
+  this.resume();
+}
+
+/**
+ * Pause timer execution
+ */
+
+
+/**
+ * Resume timer execution
+ */
+
+
+/**
+ * Clear timeout execution
+ */
+;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

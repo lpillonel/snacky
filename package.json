@@ -1,6 +1,6 @@
 {
   "name": "snacky",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Material Design Snackbar in vanilla JS",
   "main": "build",
   "author": "Luca Pillonel",
@@ -9,16 +9,16 @@
     "build": "webpack"
   },
   "devDependencies": {
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-preset-stage-0": "^6.24.1",
-    "node-sass": "^4.5.2",
-    "sass-loader": "^6.0.3",
     "babel-core": "^6.24.1",
     "babel-loader": "^7.0.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.4.0",
+    "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.1",
-    "extract-text-webpack-plugin": "^2.1.0",
-    "webpack": "^2.4.1"
+    "extract-text-webpack-plugin": "^3.0.2",
+    "node-sass": "^4.5.2",
+    "sass-loader": "^6.0.3",
+    "webpack": "^3.10.0"
   }
 }
